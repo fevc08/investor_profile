@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile Form</title>
+</head>
+<body>
+    <form action="{{ url_for('submit_profile') }}" method="POST">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="first_name" required><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="last_name" required><br>
+        
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="date_of_birth" required><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" value="CL" readonly><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br>
+        
+        <label for="postalCode">Postal Code:</label>
+        <input type="number" id="postalCode" name="postal_code" required><br>
+        
+        <label for="dni">DNI:</label>
+        <input type="number" id="dni" name="dni" required><br>
+        
+        <!-- Financial Knowledge Questions -->
+        <label for="question1">¿Cuánto conoces sobre inversiones y finanzas personales?</label>
+        <input type="radio" id="question1" name="question1" value="1"> Soy principiante, no tengo experiencia previa.
+        <input type="radio" id="question1" name="question1" value="2"> Tengo conocimientos básicos, entiendo algunos conceptos.
+        <input type="radio" id="question1" name="question1" value="3"> Tengo experiencia moderada y he invertido en algunos instrumentos.
+        <input type="radio" id="question1" name="question1" value="3"> Tengo experiencia avanzada y manejo estrategias complejas.<br>
+        
+        <label for="question2">¿Qué instrumentos financieros conoces o has utilizado?</label>
+        <input type="radio" id="question2" name="question2" value="1"> Cuentas de ahorro, plazos fijos, fondos indexados y ETFs.
+        <input type="radio" id="question2" name="question2" value="2"> Acciones de empresas y bonos.
+        <input type="radio" id="question2" name="question2" value="3"> Criptomonedas y derivados financieros (futuros, opciones, apalancamientos).<br>
+        
+        <label for="question3">¿Sabes cómo interpretar gráficos o análisis de mercado financiero?</label>
+        <input type="radio" id="question3" name="question3" value="1"> No, no tengo conocimientos sobre análisis técnico o fundamental.
+        <input type="radio" id="question3" name="question3" value="2"> Tengo conocimientos básicos, puedo interpretar gráficos simples.
+        <input type="radio" id="question3" name="question3" value="3"> Tengo conocimientos avanzados, puedo interpretar gráficos complejos y análisis técnico.<br>       
+
+        <!-- Risk Tolerance Questions -->
+        <label for="riskQuestion1">¿Qué tan cómodo te sientes con las fluctuaciones de valor en tus inversiones?</label>
+        <input type="radio" id="riskQuestion1" name="riskQuestion1" value="1"> Prefiero estabilidad y evitar pérdidas, aunque los retornos sean bajos.
+        <input type="radio" id="riskQuestion1" name="riskQuestion1" value="2"> Puedo tolerar ciertas fluctuaciones, pero prefiero no arriesgar demasiado.
+        <input type="radio" id="riskQuestion1" name="riskQuestion1" value="3"> Estoy dispuesto a asumir riesgos y fluctuaciones, en busca de mayores retornos.<br>
+        
+        <label for="riskQuestion2">Si una inversión pierde un 20% de su valor en un mes, ¿qué harías?</label>
+        <input type="radio" id="riskQuestion2" name="riskQuestion2" value="1"> Retiraría mi dinero inmediatamente para evitar más pérdidas.
+        <input type="radio" id="riskQuestion2" name="riskQuestion2" value="2"> Esperaría a que se recupere el valor, pero estaría preocupado.
+        <input type="radio" id="riskQuestion2" name="riskQuestion2" value="3"> Mantendría mi inversión y esperaría a que se recupere el valor.
+        <input type="radio" id="riskQuestion2" name="riskQuestion2" value="3"> Aumentaría mi inversión, aprovechando la baja de precio.<br>
+
+        <label for="riskQuestion3">¿Qué porcentaje de tus ingresos estás dispuesto a destinar a inversiones de alto riesgo?</label>
+        <input type="radio" id="riskQuestion3" name="riskQuestion3" value="1"> Menos del 10% de mis ingresos.
+        <input type="radio" id="riskQuestion3" name="riskQuestion3" value="2"> Entre el 10% y 30% de mis ingresos.
+        <input type="radio" id="riskQuestion3" name="riskQuestion3" value="3"> Más del 30% de mis ingresos.<br>
+
+        <label for="riskQuestion4">¿Te gustaría operar con instrumentos de alto riesgo como apalancamiento o futuros?</label>
+        <input type="radio" id="riskQuestion4" name="riskQuestion4" value="1"> No, prefiero evitar instrumentos de alto riesgo.
+        <input type="radio" id="riskQuestion4" name="riskQuestion4" value="2"> Sí, pero con moderación y bajo control.
+        <input type="radio" id="riskQuestion4" name="riskQuestion4" value="3"> Sí, me gustaría operar con instrumentos de alto riesgo.<br>
+        
+        <!-- Income for Savings Capacity -->
+        <label for="income">Monthly Income:</label>
+        <input type="number" id="income" name="income" required><br>
+        <input for="expenses">Monthly Expenses:</label>
+        <input type="number" id="expenses" name="expenses" required><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
