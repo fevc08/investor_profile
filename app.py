@@ -48,7 +48,7 @@ def submit_profile():
     # Determine the level based on scores
     financial_knowledge_level = determine_level(financial_knowledge_score, ['basic', 'intermediate', 'expert'])
     risk_tolerance = determine_level(risk_tolerance_score, ['low', 'medium', 'high'])
-    savings_capacity = determine_savings_capacity(savings_capacity_score, ['low', 'medium', 'high'])
+    savings_capacity = determine_savings_capacity(calculate_savings_capacity, ['low', 'medium', 'high'])
     
     # Create or update the user profile
     user_profile = UserProfile.query.filter_by(user_id=1).first()  # Assuming user_id is 1 for this example
@@ -116,17 +116,17 @@ def calculate_savings_capacity(form_data):
     return score
 
 def determine_level(score, levels):
-    if score > 6 and score < 10:
-        return levels[0]
-    elif score >= 10 and score < 15:
+    if score >= 10:
+        return levels[2]
+    elif score < 10 and score >= 5:
         return levels[1]
     else:
-        return levels[2]
+        return levels[0]
 
 def determine_savings_capacity(score, levels):
-    if score < 1000:
+    if score < 100:
         return levels[0]
-    elif score >= 1000 and score < 5000:
+    elif score >= 100 and score < 500:
         return levels[1]
     else:
         return levels[2]
